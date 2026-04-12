@@ -2460,6 +2460,7 @@ quick-add-modal .product__stacked .product__info-wrapper {
 }
 .product-section .product__pre-sale-banner.rte > *:first-child { margin-top: 0; }
 .product-section .product__pre-sale-banner.rte > *:last-child { margin-bottom: 0; }
+.product-section .product__pre-sale-banner.rte a { color: inherit; }
 .product-section .product__short-description { font-family: Neue Haas Unica W1G; font-weight: 400; font-size: 18px; line-height: 120%; letter-spacing: 0; margin: 0px 0;}
 .product-section .product__product_formula { font-family: "Neue Haas Unica", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-weight: 100; font-size: 24px; line-height: 120%; letter-spacing: 0; margin: 0 0 0; font-style: italic}
 body:has(.ingredients-modal[style="display: block;"]) .header-wrapper { z-index: 2; }
