@@ -2453,7 +2453,7 @@ quick-add-modal .product__stacked .product__info-wrapper {
   font-size: 16px;
   line-height: 130%;
   letter-spacing: 0;
-  margin: 0 0 12px;
+  margin: 12px 0;
   padding: 0.75rem 1rem;
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.07);
@@ -2600,7 +2600,7 @@ align-items: center;
   .product__info-container { margin-top: 20px; padding: 0 20px;}
   .body-template-product-longform .product__info-container { margin-top: 20px; padding: 0 20px;}
   .product-section .jdgm-preview-badge .jdgm-star.jdgm-star { color: #692c2a; font-size: 12px; }
-  .product-section .product__pre-sale-banner { font-size: 14px; margin-bottom: 10px; padding: 0.65rem 0.85rem; }
+  .product-section .product__pre-sale-banner { font-size: 14px; margin: 10px 0; padding: 0.65rem 0.85rem; }
   .product-section .product__short-description {font-size: 18px; margin:16px 0;}
   .product-section .product__product_formula {margin:8px 0 16px;}
   .product-section .view-full-ingredients, .product-section .view-full-ingredients a { font-size: 14px; }
