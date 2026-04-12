@@ -119,6 +119,32 @@
   </div>
 {% endif %}                  
                   </div>
+                  {%- liquid
+                    assign pre_sale_active = product.metafields.custom.pre_sale_active.value | default: product.metafields.custom.pre_sale_active
+                    assign pre_sale_text_mf = product.metafields.custom.pre_sale_text
+                    assign pre_sale_bg_mf = product.metafields.custom.pre_sale_background
+                  -%}
+                  {% if pre_sale_active == true and pre_sale_text_mf != blank %}
+                    {%- liquid
+                      assign pre_sale_bg_style = ''
+                      if pre_sale_bg_mf != blank and pre_sale_bg_mf.value != blank
+                        assign _col = pre_sale_bg_mf.value
+                        if _col.rgb != blank
+                          assign pre_sale_bg_style = 'rgb(' | append: _col.rgb | append: ')'
+                        else
+                          assign pre_sale_bg_style = _col
+                        endif
+                      endif
+                    -%}
+                    <div
+                      class="product__pre-sale-banner rte"
+                      {% if pre_sale_bg_style != blank %}
+                        style="background-color: {{ pre_sale_bg_style }};"
+                      {% endif %}
+                    >
+                      {{ pre_sale_text_mf | metafield_tag }}
+                    </div>
+                  {% endif %}
                   {% if product.metafields.custom.product_short_description %}
                     <div class="product__short-description">
                       {{ product.metafields.custom.product_short_description }}
