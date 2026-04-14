@@ -190,49 +190,6 @@
                       </div>
                     {% endif %}
                   </div>
-                  {%- liquid
-                    assign pre_sale_active = product.metafields.custom.pre_sale_active.value | default: product.metafields.custom.pre_sale_active
-                    assign pre_sale_text_mf = product.metafields.custom.pre_sale_text
-                    assign pre_sale_bg_mf = product.metafields.custom.pre_sale_background
-                    assign pre_sale_fg_mf = product.metafields.custom.pre_sale_text_color
-                  -%}
-                  {% if pre_sale_active == true and pre_sale_text_mf != blank %}
-                    {%- liquid
-                      assign pre_sale_bg_style = ''
-                      if pre_sale_bg_mf != blank and pre_sale_bg_mf.value != blank
-                        assign _bg = pre_sale_bg_mf.value
-                        if _bg.rgb != blank
-                          assign pre_sale_bg_style = 'rgb(' | append: _bg.rgb | append: ')'
-                        else
-                          assign pre_sale_bg_style = _bg
-                        endif
-                      endif
-                      assign pre_sale_fg_style = ''
-                      if pre_sale_fg_mf != blank and pre_sale_fg_mf.value != blank
-                        assign _fg = pre_sale_fg_mf.value
-                        if _fg.rgb != blank
-                          assign pre_sale_fg_style = 'rgb(' | append: _fg.rgb | append: ')'
-                        else
-                          assign pre_sale_fg_style = _fg
-                        endif
-                      endif
-                      assign pre_sale_banner_style = ''
-                      if pre_sale_bg_style != blank
-                        assign pre_sale_banner_style = pre_sale_banner_style | append: 'background-color: ' | append: pre_sale_bg_style | append: ';'
-                      endif
-                      if pre_sale_fg_style != blank
-                        assign pre_sale_banner_style = pre_sale_banner_style | append: 'color: ' | append: pre_sale_fg_style | append: ';'
-                      endif
-                    -%}
-                    <div
-                      class="product__pre-sale-banner rte"
-                      {% if pre_sale_banner_style != blank %}
-                        style="{{ pre_sale_banner_style }}"
-                      {% endif %}
-                    >
-                      {{ pre_sale_text_mf | metafield_tag }}
-                    </div>
-                  {% endif %}
                   {% if product.metafields.custom.product_short_description %}
                     <div class="product__short-description">
                       {{ product.metafields.custom.product_short_description }}
@@ -842,7 +799,7 @@
                               </span>
                               {%- render 'icon-loading' -%}
                             {%- else -%}
-                              <span> pre-order now </span>
+                              <span> Add to cart </span>
                             {%- endif -%}
                           </button>
                         </div>
