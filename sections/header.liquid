@@ -8,6 +8,21 @@
 <link rel="stylesheet" href="{{ 'disclosure.css' | asset_url }}" media="print" onload="this.media='all'">
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<!-- Trybe Attribution Pixel (Custom Domain) -->
+<script>
+(function(w,d,p,s,u,pl,at) {
+  w._trybe = w._trybe || { pixelCode: p, storeId: s, platform: pl, autoTracking: at, customDomain: 'track.tryfleur.com', serviceUrl: 'https://prod-trybe-platform-6mi3j.ondigitalocean.app/attribution' };
+  var script = d.createElement('script');
+  script.src = u + '/pixel.js';
+  script.async = true;
+  script.setAttribute('data-pixel-code', p);
+  script.setAttribute('data-store-id', s);
+  script.setAttribute('data-platform', pl);
+  script.setAttribute('data-auto-tracking', at);
+  d.head.appendChild(script);
+})(window, document, 'px_c738cd395039', '5af76529-1872-4e0a-8258-d447aa682697', 'https://track.tryfleur.com', 'CUSTOM', 'false');
+</script>
+<!-- End Trybe Attribution Pixel -->
 
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 {%- if settings.cart_type == "drawer" -%}
