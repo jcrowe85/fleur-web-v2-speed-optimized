@@ -32,6 +32,7 @@
     "quickview_button_type": "none",
     "quickview_button_style": "primary",
     "quickview_button_layout": "hover",
+    "cart_type": "page",
     "show_breadcrumbs": false,
     "open_new_tab": true,
     "content_for_index": [],
