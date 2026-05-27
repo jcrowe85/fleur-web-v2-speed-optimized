@@ -219,21 +219,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script>
 (function () {
   function clickShippingProtectionToggle() {
-    const addon = [...document.querySelectorAll('.upcart-public-addons')]
-      .find(el => el.textContent.includes('Shipping Protection'));
+    const addons = document.querySelectorAll('.upcart-public-addons');
 
-    if (!addon) return;
+    addons.forEach(function (addon) {
+      if (!addon.textContent.includes('Shipping Protection')) return;
 
-    const checkbox = addon.querySelector('input[type="checkbox"]');
-    const toggle = addon.querySelector('.upcart-public-addons__toggle-switch');
+      const checkbox = addon.querySelector('input[type="checkbox"]');
+      const toggle = addon.querySelector('.upcart-public-addons__toggle-switch');
 
-    if (!checkbox || checkbox.checked) return;
+      if (!checkbox || checkbox.checked) return;
 
-    if (toggle) {
-      toggle.click();
-    } else {
-      checkbox.click();
-    }
+      if (toggle) {
+        toggle.click();
+      } else {
+        checkbox.click();
+      }
+    });
   }
 
   setInterval(clickShippingProtectionToggle, 500);
