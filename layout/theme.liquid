@@ -215,6 +215,43 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-PD6XMJLT');</script>
 <!-- End Google Tag Manager -->
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  function enableShippingProtection() {
+
+    const checkbox = document.querySelector(
+      '.upcart-internal-addons__toggle-switch input[type="checkbox"]'
+    );
+
+    if (!checkbox) return;
+
+    // only toggle if OFF
+    if (!checkbox.checked) {
+
+      // trigger native click so UpCart updates correctly
+      checkbox.click();
+
+    }
+  }
+
+  // initial load
+  enableShippingProtection();
+
+  // UpCart re-renders dynamically, so observe DOM changes
+  const observer = new MutationObserver(() => {
+    enableShippingProtection();
+  });
+
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true
+  });
+
+});
+</script>
+
 	</head>
 
     <body class="body-template-{{ template.name }} body-template-{{ template | replace: '.', '-' }} template-{{ template.name }} template-{{ template | replace: '.', '-' }}">
