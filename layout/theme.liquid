@@ -217,39 +217,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+(function () {
+  function clickShippingProtectionToggle() {
+    const addon = [...document.querySelectorAll('.upcart-public-addons')]
+      .find(el => el.textContent.includes('Shipping Protection'));
 
-  function enableShippingProtection() {
+    if (!addon) return;
 
-    const checkbox = document.querySelector(
-      '.upcart-internal-addons__toggle-switch input[type="checkbox"]'
-    );
+    const checkbox = addon.querySelector('input[type="checkbox"]');
+    const toggle = addon.querySelector('.upcart-public-addons__toggle-switch');
 
-    if (!checkbox) return;
+    if (!checkbox || checkbox.checked) return;
 
-    // only toggle if OFF
-    if (!checkbox.checked) {
-
-      // trigger native click so UpCart updates correctly
+    if (toggle) {
+      toggle.click();
+    } else {
       checkbox.click();
-
     }
   }
 
-  // initial load
-  enableShippingProtection();
+  setInterval(clickShippingProtectionToggle, 500);
 
-  // UpCart re-renders dynamically, so observe DOM changes
-  const observer = new MutationObserver(() => {
-    enableShippingProtection();
+  document.addEventListener('click', function () {
+    setTimeout(clickShippingProtectionToggle, 300);
+    setTimeout(clickShippingProtectionToggle, 1000);
   });
-
-  observer.observe(document.body, {
-    childList: true,
-    subtree: true
-  });
-
-});
+})();
 </script>
 
 	</head>
