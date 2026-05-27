@@ -52,11 +52,6 @@
         "disabled": false,
         "settings": {}
       },
-      "16865981829950876834": {
-        "type": "shopify://apps/icart-cart-drawer-cart-upsell/blocks/icart-block/e651bbc2-5760-47d8-a513-2aa6ee3a9aa7",
-        "disabled": false,
-        "settings": {}
-      },
       "2699851813924348007": {
         "type": "shopify://apps/navidium-protection/blocks/navidium-protection-consent/0127ebe0-a248-4215-97ad-f7db763bd6c8",
         "disabled": false,
@@ -74,6 +69,11 @@
       },
       "18171216174956455555": {
         "type": "shopify://apps/delivery-pickup/blocks/odd-block/80605365-b4f4-42ba-9b84-3d39984a49dc",
+        "disabled": false,
+        "settings": {}
+      },
+      "14952540001915115444": {
+        "type": "shopify://apps/upcart-cart-drawer/blocks/app-embed/af3da5fb-f5f7-40ec-8273-41bf50059d4b",
         "disabled": false,
         "settings": {}
       }
