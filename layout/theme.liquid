@@ -216,40 +216,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-PD6XMJLT');</script>
 <!-- End Google Tag Manager -->
 
-<script>
-(function () {
-  function enableShippingProtection() {
-    const addon = Array.from(document.querySelectorAll('.upcart-public-addons'))
-      .find(el => el.innerText.includes('Shipping Protection'));
 
-    if (!addon) return;
-
-    const checkbox = addon.querySelector('input[type="checkbox"]');
-    const label = addon.querySelector('label.upcart-public-addons__toggle-switch');
-    const slider = addon.querySelector('.upcart-public-addons__toggle-slider');
-
-    if (!checkbox) return;
-    if (checkbox.checked) return;
-
-    console.log('Shipping Protection found. Attempting toggle...');
-
-    checkbox.dispatchEvent(new MouseEvent('mousedown', { bubbles: true }));
-    checkbox.dispatchEvent(new MouseEvent('mouseup', { bubbles: true }));
-    checkbox.dispatchEvent(new MouseEvent('click', { bubbles: true }));
-
-    if (!checkbox.checked && label) label.click();
-    if (!checkbox.checked && slider) slider.click();
-  }
-
-  setInterval(enableShippingProtection, 750);
-
-  document.addEventListener('upcart:cart-opened', enableShippingProtection);
-  document.addEventListener('upcart:cart:updated', enableShippingProtection);
-  document.addEventListener('click', function () {
-    setTimeout(enableShippingProtection, 500);
-  });
-})();
-</script>
 
 	</head>
 
